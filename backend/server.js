@@ -2,6 +2,7 @@
 import express from 'express';
 //conecting to database 
 import dotenv from "dotenv";
+import {connectDB} from './config/db.js';
 
 dotenv.config();
 
@@ -14,5 +15,6 @@ app.get("/product",(reg ,res) => {
 console.log(process.env.MONGO_URI)
 
 app.listen(5000,()=>{
-    console.log ("server started at http://localhost:5000")
+    connectDB();
+    console.log ("Server Started at http://localhost:5000")
 });
