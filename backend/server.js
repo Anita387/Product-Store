@@ -3,21 +3,23 @@ import express from 'express';
 //conecting to database 
 import dotenv from "dotenv";
 import {connectDB} from './config/db.js';
+import Product from './models/product.model.js';
 
 dotenv.config();
 
 const app = express();
+app.use(express.json()); // allow to accept json data from the client
 
-app.post("product",async(reg ,res) => {
+app.post("/api/products",async(req ,res) => {
     const product = req.body; // user will send this data
     if (!product.name || !product.price || !product.image){
         return res.status(400).json({success: false , message:"Please fill all the fields"});
     }
     const newProduct = new Product(product);
-    try{
+    try{    
         //saving our product to the database
         await newProduct.save();
-        res.status(200).json({success: true , data: newProduct});
+        res.status(201).json({success: true , data: newProduct});
     }
     catch(error){
         console.error("Error in Create product:", error.message);
