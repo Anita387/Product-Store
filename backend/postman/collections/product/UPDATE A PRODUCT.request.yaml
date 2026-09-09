@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:5000/api/products/123
+method: PUT
+order: 3761
