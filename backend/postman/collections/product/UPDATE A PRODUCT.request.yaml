@@ -1,4 +1,15 @@
 $kind: http-request
-url: http://localhost:5000/api/products/123
+url: http://localhost:5000/api/products/6aa05d53eb7c94caa6eb34ee
 method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"tablet updatet\",\r
+
+    \    \"price\": 5550.15,\r
+
+    \    \"image\": \"example.com/image\"\r
+
+    }"
 order: 3761
