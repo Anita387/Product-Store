@@ -1,4 +1,4 @@
 $kind: http-request
-url: ""
-method: GET
-order: 1078
+url: http://localhost:5000/api/products/1235
+method: DELETE
+order: 1444049717593683

@@ -1,4 +1,15 @@
 $kind: http-request
-url: ""
-method: GET
-order: 2000
+url: http://localhost:5000/api/products
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\" : \"mobile phone\",\r
+
+    \    \"price\": \"380.15\",\r
+
+    \    \"image\": \"example.com/image\"\r
+
+    }"
+order: 3000
