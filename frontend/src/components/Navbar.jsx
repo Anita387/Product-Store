@@ -2,10 +2,15 @@
 import { Container, Flex, Text, HStack, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { TbLibraryPlus } from "react-icons/tb";
+import { useColorMode, useColorModeValue } from './ui/color-mode';
+import { IoMoon } from "react-icons/io5";
+import { LuSun } from "react-icons/lu";
 
 const Navbar = () => {
+  const {colorMode, toggleColorMode} = useColorMode();
+
   return (
-    <Container maxW={'1140px'} px={4}>
+    <Container  maxW={'100%'} px={20} bg={useColorModeValue('#fd898942', 'gray.800')}>
       <Flex
         h={16}
         alignItems={'center'}
@@ -31,20 +36,25 @@ const Navbar = () => {
           <Link to={'/create'}>
             <Button
               p={3}
-              backgroundImage="linear-gradient(to right, #ff0000, #fdcf58)"
-              color="white"
+              bg={useColorModeValue("rgba(255, 0, 0, 0.01)", 'gray.700')}
+              color="black"
               _hover={{
-                backgroundImage: "linear-gradient(to right, #fdce58f6, #ff0000f8)"
+                bgColor:useColorModeValue("rgba(255, 0, 0, 0.27)", "gray.700")
               }}
-              borderWidth="1px"
+              borderWidth="2px"
+              borderColor="rgba(255, 0, 0, 0.11)"
             >
               <TbLibraryPlus />
             </Button>
           </Link>
+          <Button onClick={toggleColorMode} background={"white"} color={"black"}>
+            {colorMode === 'light' ? <IoMoon />:<LuSun sizee="20"/>} 
+
+          </Button>
         </HStack>
       </Flex>
     </Container>
   );
-};
+} 
 
 export default Navbar;
