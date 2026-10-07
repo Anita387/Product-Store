@@ -25,7 +25,6 @@ const CreatePage = () => {
             <Button colorPalette={"red"} onClick={handelAddProduct} w="full"> Add Product</Button>
           </VStack>
         </Box>
-
       </VStack>
     </Container>
   )
