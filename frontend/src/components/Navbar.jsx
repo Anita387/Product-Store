@@ -10,7 +10,7 @@ const Navbar = () => {
   const {colorMode, toggleColorMode} = useColorMode();
 
   return (
-    <Container  maxW={'100%'} px={20} bg={useColorModeValue('#fd898942', 'gray.800')}>
+    <Container  maxW={'100%'} px={10} bg={useColorModeValue('#fd898942', 'gray.800')}>
       <Flex
         h={16}
         alignItems={'center'}
@@ -39,7 +39,7 @@ const Navbar = () => {
               bg={useColorModeValue("rgba(255, 0, 0, 0.01)", 'gray.700')}
               color="black"
               _hover={{
-                bgColor:useColorModeValue("rgba(255, 0, 0, 0.27)", "gray.700")
+                 bg:"red.400"
               }}
               borderWidth="2px"
               borderColor="rgba(255, 0, 0, 0.11)"
