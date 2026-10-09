@@ -5,11 +5,9 @@ import { TbLibraryPlus } from "react-icons/tb";
 import { useColorMode, useColorModeValue } from './ui/color-mode';
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
-import { useProductStore } from '../store/product';
 
 const Navbar = () => {
   const {colorMode, toggleColorMode} = useColorMode();
-  const { products } = useProductStore()
 
   return (
     <Container  maxW={'100%'} px={10} bg={useColorModeValue('#fd898942', 'gray.800')}>
