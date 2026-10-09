@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 
 function App() {
+  const { products } = useProductStore()
   const bg = useColorModeValue('#fff8e7', 'gray.900');
 
   return (
