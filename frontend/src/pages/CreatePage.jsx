@@ -13,26 +13,29 @@ const CreatePage = () => {
 
   const {createProduct} = useProductStore()
   
-  const handelAddProduct = async () => {
-    const { success, message } = await createProduct(newProduct);
-    if (!success) {
-        toaster.create({
-          title: "Error",
-          description: message,
-          type: "error",
-          meta: { closable: true },  // ← the v3 way
-        });
-        return
-      } else {
-        toaster.create({
-          title: "Success",
-          description: message,
-          type: "success",
-          meta: { closable: true },  // ← the v3 way
-        });
-        return
-      }
-    }
+const handelAddProduct = async () => {
+  const { success, message } = await createProduct(newProduct);
+
+  if (!success) {
+    toaster.create({
+      title: "Error",
+      description: message,
+      type: "error",
+      meta: { closable: true },
+    });
+    return;
+  }
+
+  toaster.create({
+    title: "Success",
+    description: message,
+    type: "success",
+    meta: { closable: true },
+  });
+
+  setNewProduct({ name: '', price: '', image: '' });  
+};
+
 
 
   return (
