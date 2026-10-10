@@ -19,6 +19,7 @@ const Navbar = () => {
       >
         <Text
           fontSize={{ base: '25px', sm: '28px' }}
+          fontFamily="'Baloo Bhai 2', sans-serif"
           fontWeight={'bold'}
           textTransform={'uppercase'}
           textAlign={'center'}
