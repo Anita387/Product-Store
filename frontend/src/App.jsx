@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import CreatePage from "./pages/CreatePage";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
+import { Toaster } from "./components/ui/toaster"; 
 
 function App() {
   const bg = useColorModeValue('#fff8e7', 'gray.900');
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/create' element={<CreatePage />} />
       </Routes>
+      <Toaster />
     </Box>
   );
 }
